@@ -1,24 +1,22 @@
-import { useEffect, useState } from 'react';
-import Header from './Header';
-import { Link } from 'react-router-dom'
+import { useEffect, useState } from "react";
+import Header from "./Header";
+import { Link } from "react-router-dom";
+import styles from  "../styles/MainPage.module.css"
+
+const {
+  bob
+} = styles
 
 function MainPage() {
-    const [user, setUser] = useState('');
 
-    useEffect(() => {
-        const user = sessionStorage.getItem('user');
-        setUser(user);
-    }, []);
-
-    return (
-        <div>
-            <Header />
-            <div>
-                {!user ? "" : <p>Hello, {user}</p>}
-                <h1>Main Page</h1>
-            </div>
-        </div>
-    );
+  return (
+    <div>
+      <Header />
+      <div className={bob}>
+        <h1>Main Page</h1>
+      </div>
+    </div>
+  );
 }
 
 export default MainPage;

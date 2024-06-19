@@ -1,0 +1,14 @@
+.AllHeaderBox {
+    display: flex;
+    background-color: aqua;
+    justify-content: space-between;
+}
+
+.ProjectName {
+    font-family: monospace;
+}
+.UserLogoutBox {
+    display: flex;
+    margin-right: 1rem;
+    margin-top: 1rem;
+}

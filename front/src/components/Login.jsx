@@ -16,10 +16,9 @@ function Login() {
         e.preventDefault();
         axios.post('http://localhost:3000/login', { email, password })
             .then(result => {
-                //console.log(result.data)
                 const { name } = result.data;
                 sessionStorage.setItem('user', name);
-                navigate('/');
+                navigate('/mainpage');
             })
             .catch(err => console.log(err));
     };

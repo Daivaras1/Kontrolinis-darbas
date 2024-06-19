@@ -1,10 +1,12 @@
-const express = require('express');
 const mongoose = require('mongoose');
+const express = require('express');
+const app = express();
 const cors = require('cors');
 const EmployeeModel = require('./models/Employee');
+const proceduresRoutes = require('../back/routes/proceduresRoutes')
 require("dotenv").config();
 
-const app = express();
+
 app.use(express.json());
 app.use(cors());
 
@@ -35,3 +37,8 @@ app.post('/login', (req, res) => {
 app.listen(3000, () => {
     console.log('Server running on port 3000')
 });
+
+const procedureRoutes = require('./routes/proceduresRoutes');
+
+app.use('/api/procedures', procedureRoutes);
+
